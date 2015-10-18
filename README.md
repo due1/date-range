@@ -31,4 +31,5 @@ Then, when using Maven from other projects, simply add the following dependency:
 </dependency>
 ```
 
-You have to replace `VERSION` by the version number of the latest release.
+You have to replace `VERSION` by the version number of the latest release. Consult
+`pom.xml`for the latest stable version number.
