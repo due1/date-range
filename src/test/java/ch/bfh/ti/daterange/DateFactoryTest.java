@@ -162,7 +162,7 @@ public class DateFactoryTest {
 
 	@Test
 	public void testToString1() {
-		Date now = DateFactory.now();
+		Date now = DateFactory.createDate(2006, 11, 12);
 		Calendar c = new GregorianCalendar();
 		c.setTime(now);
 		String dateString = DateFactory.toString(now);
