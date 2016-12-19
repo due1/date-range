@@ -29,6 +29,14 @@
 		<url>https://github.com/due1/date-range</url>
 	</scm>
 
+	<distributionManagement>
+		<site>
+			<id>date-range.local</id>
+			<name>Date Range Website</name>
+			<url>target/staging</url>
+		</site>
+	</distributionManagement>
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
