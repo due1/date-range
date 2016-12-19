@@ -15,6 +15,20 @@
 	</organization>
 	<url>http://www.bfh.ch</url>
 
+	<licenses>
+		<license>
+			<name>GNU GENERAL PUBLIC LICENSE, Version 3</name>
+			<url>https://www.gnu.org/licenses/gpl-3.0.en.html</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	<scm>
+		<connection>scm:git:git@github.com/due1/date-range.git</connection>
+		<developerConnection>scm:git:git@github.com/due1/date-range.git</developerConnection>
+		<url>https://github.com/due1/date-range</url>
+	</scm>
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
