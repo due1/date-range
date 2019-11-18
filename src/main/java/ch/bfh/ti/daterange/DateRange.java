@@ -54,7 +54,7 @@ public interface DateRange extends Serializable, Comparable<DateRange> {
 	public boolean includes(Date arg);
 
 	/**
-	 * Returns true iff this.includes(arg.start()) && this.includes(arg.end()).
+	 * Returns true iff this.includes(arg.start()) AND this.includes(arg.end()).
 	 *
 	 * @param arg
 	 *            The date range to check.

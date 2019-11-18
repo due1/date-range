@@ -134,7 +134,7 @@ public class DateRangeImpl implements DateRange {
 	}
 
 	/**
-	 * @inheritDoc
+	 * {@inheritDoc}
 	 */
 	@Override
 	public int compareTo(DateRange dr) {
@@ -148,7 +148,7 @@ public class DateRangeImpl implements DateRange {
 	}
 
 	/**
-	 * @inheritDoc
+	 * {@inheritDoc}
 	 */
 	@Override
 	public boolean startsBefore(DateRange dr) {
@@ -156,7 +156,7 @@ public class DateRangeImpl implements DateRange {
 	}
 
 	/**
-	 * @inheritDoc
+	 * {@inheritDoc}
 	 */
 	@Override
 	public boolean startsAfter(DateRange dr) {
@@ -164,7 +164,7 @@ public class DateRangeImpl implements DateRange {
 	}
 
 	/**
-	 * @inheritDoc
+	 * {@inheritDoc}
 	 */
 	@Override
 	public boolean endsBefore(DateRange dr) {
@@ -172,7 +172,7 @@ public class DateRangeImpl implements DateRange {
 	}
 
 	/**
-	 * @inheritDoc
+	 * {@inheritDoc}
 	 */
 	@Override
 	public boolean endsAfter(DateRange dr) {
@@ -180,7 +180,7 @@ public class DateRangeImpl implements DateRange {
 	}
 
 	/**
-	 * @inheritDoc
+	 * {@inheritDoc}
 	 */
 	@Override
 	public boolean strictlyIncludes(DateRange dr) {
@@ -188,7 +188,7 @@ public class DateRangeImpl implements DateRange {
 	}
 
 	/**
-	 * @inheritDoc
+	 * {@inheritDoc}
 	 */
 	@Override
 	public boolean exactlyMatches(DateRange dr) {
