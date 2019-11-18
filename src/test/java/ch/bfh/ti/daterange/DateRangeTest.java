@@ -34,7 +34,7 @@ public class DateRangeTest {
 	 * <code>ch.bfh.ti.daterange.impl.pojo.DateRangeFactory</code> is used.
 	 */
 	@BeforeEach
-	void setUp() throws Exception {
+	public void setUp() throws Exception {
 		String className = System.getProperty("daterangefactory.name",
 				"ch.bfh.ti.daterange.impl.pojo.DateRangeFactory");
 		Class<?> clazz = Class.forName(className);
@@ -45,7 +45,7 @@ public class DateRangeTest {
 	 * Tests the creation for start date is less than end date.
 	 */
 	@Test
-	void testCreation1() {
+	public void testCreation1() {
 		factory.createDateRange(DateFactory.createDate(2006, 3, 28),
 				DateFactory.createDate(2006, 3, 29));
 	}
@@ -54,7 +54,7 @@ public class DateRangeTest {
 	 * Tests the creation for start date is equal to the end date.
 	 */
 	@Test
-	void testCreation2() {
+	public void testCreation2() {
 		factory.createDateRange(DateFactory.createDate(2006, 3, 28),
 				DateFactory.createDate(2006, 3, 28));
 	}
@@ -63,7 +63,7 @@ public class DateRangeTest {
 	 * Tests the creation for start date is greater than the end date.
 	 */
 	@Test
-	void testCreation3() {
+	public void testCreation3() {
 		try {
 			factory.createDateRange(DateFactory.createDate(2006, 3, 28),
 					DateFactory.createDate(2006, 3, 27));
@@ -76,7 +76,7 @@ public class DateRangeTest {
 	 * Tests the inclusion of a date in a date range.
 	 */
 	@Test
-	void testIncludes1() {
+	public void testIncludes1() {
 		DateRange dr = factory.createDateRange(DateFactory.createDate(2006, 3,
 				10), DateFactory.createDate(2006, 3, 20));
 		assertTrue(dr.includes(DateFactory.createDate(2006, 3, 10)));
@@ -92,7 +92,7 @@ public class DateRangeTest {
 	 * Tests the inclusion of a date range in a date range.
 	 */
 	@Test
-	void testIncludes2() {
+	public void testIncludes2() {
 		DateRange dr = factory.createDateRange(DateFactory.createDate(2006, 3,
 				10), DateFactory.createDate(2006, 3, 20));
 		assertTrue(dr.includes(factory.createDateRange(DateFactory.createDate(
@@ -111,7 +111,7 @@ public class DateRangeTest {
 	 * Tests the overlapping of a date range with another date range.
 	 */
 	@Test
-	void testOverlap() {
+	public void testOverlap() {
 		DateRange dr = factory.createDateRange(DateFactory.createDate(2006, 3,
 				10), DateFactory.createDate(2006, 3, 20));
 		assertTrue(dr.overlaps(factory.createDateRange(DateFactory.createDate(
@@ -134,7 +134,7 @@ public class DateRangeTest {
 	 * Tests equality and hash code.
 	 */
 	@Test
-	void testEqualsAndHashCode() {
+	public void testEqualsAndHashCode() {
 		DateRange dr1 = factory.createDateRange(DateFactory.createDate(2006,
 				3, 10), DateFactory.createDate(2006, 3, 20));
 		assertNotEquals(null, dr1);
@@ -151,7 +151,7 @@ public class DateRangeTest {
 	}
 
 	@Test
-	void testIsEmpty() {
+	public void testIsEmpty() {
 		DateRange dr1 = factory.createDateRange(DateFactory.createDate(2006,
 				3, 10), DateFactory.createDate(2006, 3, 20));
 		assertFalse(dr1.isEmpty());
@@ -164,7 +164,7 @@ public class DateRangeTest {
 	}
 
 	@Test
-	void testCompareTo1() {
+	public void testCompareTo1() {
 		DateRange dr1 = factory.createDateRange(DateFactory.createDate(2006,
 				4, 10), DateFactory.createDate(2006, 4, 20));
 		DateRange dr2 = factory.createDateRange(DateFactory.createDate(2006,
@@ -173,7 +173,7 @@ public class DateRangeTest {
 	}
 
 	@Test
-	void testCompareTo2() {
+	public void testCompareTo2() {
 		DateRange dr1 = factory.createDateRange(DateFactory.createDate(2006,
 				4, 11), DateFactory.createDate(2006, 4, 20));
 		DateRange dr2 = factory.createDateRange(DateFactory.createDate(2006,
@@ -182,7 +182,7 @@ public class DateRangeTest {
 	}
 
 	@Test
-	void testCompareTo21() {
+	public void testCompareTo21() {
 		DateRange dr1 = factory.createDateRange(DateFactory.createDate(2006,
 				4, 11), DateFactory.createDate(2006, 4, 19));
 		DateRange dr2 = factory.createDateRange(DateFactory.createDate(2006,
@@ -191,7 +191,7 @@ public class DateRangeTest {
 	}
 
 	@Test
-	void testCompareTo22() {
+	public void testCompareTo22() {
 		DateRange dr1 = factory.createDateRange(DateFactory.createDate(2006,
 				4, 11), DateFactory.createDate(2006, 4, 21));
 		DateRange dr2 = factory.createDateRange(DateFactory.createDate(2006,
@@ -200,7 +200,7 @@ public class DateRangeTest {
 	}
 
 	@Test
-	void testCompareTo3() {
+	public void testCompareTo3() {
 		DateRange dr1 = factory.createDateRange(DateFactory.createDate(2006,
 				4, 12), DateFactory.createDate(2006, 4, 20));
 		DateRange dr2 = factory.createDateRange(DateFactory.createDate(2006,
@@ -209,21 +209,21 @@ public class DateRangeTest {
 	}
 
 	@Test
-	void testToString11() {
+	public void testToString11() {
 		DateRange dr1 = factory.createDateRange(DateFactory.createDate(2006,
 				4, 12), DateFactory.createDate(2006, 4, 12));
 		assertEquals(DateRange.EMPTY, dr1.toString());
 	}
 
 	@Test
-	void testToString12() {
+	public void testToString12() {
 		DateRange dr1 = factory.createDateRange(DateFactory.createDate(2006,
 				4, 12), DateFactory.createDate(2006, 4, 10));
 		assertEquals(DateRange.EMPTY, dr1.toString());
 	}
 
 	@Test
-	void testToString2() {
+	public void testToString2() {
 		DateRange dr1 = factory.createDateRange(DateFactory.createDate(2006,
 				4, 10), DateFactory.createDate(2006, 4, 20));
 		assertEquals(DateFactory.toString(dr1.getStart()) + " - "
@@ -231,7 +231,7 @@ public class DateRangeTest {
 	}
 
 	@Test
-	void testStartsBefore1() {
+	public void testStartsBefore1() {
 		Date ds1 = DateFactory.getToday();
 		Date de1 = DateFactory.INFINITY;
 		Date ds2 = DateFactory.getTomorrow();
@@ -242,7 +242,7 @@ public class DateRangeTest {
 	}
 
 	@Test
-	void testStartsBefore2() {
+	public void testStartsBefore2() {
 		Date ds1 = DateFactory.getToday();
 		Date de1 = DateFactory.INFINITY;
 		Date ds2 = DateFactory.getToday();
@@ -253,7 +253,7 @@ public class DateRangeTest {
 	}
 
 	@Test
-	void testStartsBefore3() {
+	public void testStartsBefore3() {
 		Date ds1 = DateFactory.getToday();
 		Date de1 = DateFactory.INFINITY;
 		Date ds2 = DateFactory.getYesterday();
@@ -264,7 +264,7 @@ public class DateRangeTest {
 	}
 
 	@Test
-	void testStartsAfter1() {
+	public void testStartsAfter1() {
 		Date ds1 = DateFactory.getToday();
 		Date de1 = DateFactory.INFINITY;
 		Date ds2 = DateFactory.getTomorrow();
@@ -275,7 +275,7 @@ public class DateRangeTest {
 	}
 
 	@Test
-	void testStartsAfter2() {
+	public void testStartsAfter2() {
 		Date ds1 = DateFactory.getToday();
 		Date de1 = DateFactory.INFINITY;
 		Date ds2 = DateFactory.getToday();
@@ -286,7 +286,7 @@ public class DateRangeTest {
 	}
 
 	@Test
-	void testStartsAfter3() {
+	public void testStartsAfter3() {
 		Date ds1 = DateFactory.getToday();
 		Date de1 = DateFactory.INFINITY;
 		Date ds2 = DateFactory.getYesterday();
@@ -297,7 +297,7 @@ public class DateRangeTest {
 	}
 
 	@Test
-	void testEndsBefore1() {
+	public void testEndsBefore1() {
 		Date ds1 = DateFactory.EPOCH;
 		Date de1 = DateFactory.getToday();
 		Date ds2 = DateFactory.EPOCH;
@@ -308,7 +308,7 @@ public class DateRangeTest {
 	}
 
 	@Test
-	void testEndsBefore2() {
+	public void testEndsBefore2() {
 		Date ds1 = DateFactory.EPOCH;
 		Date de1 = DateFactory.getToday();
 		Date ds2 = DateFactory.EPOCH;
@@ -319,7 +319,7 @@ public class DateRangeTest {
 	}
 
 	@Test
-	void testEndsBefore3() {
+	public void testEndsBefore3() {
 		Date ds1 = DateFactory.EPOCH;
 		Date de1 = DateFactory.getTomorrow();
 		Date ds2 = DateFactory.EPOCH;
@@ -330,7 +330,7 @@ public class DateRangeTest {
 	}
 
 	@Test
-	void testEndsAfter1() {
+	public void testEndsAfter1() {
 		Date ds1 = DateFactory.EPOCH;
 		Date de1 = DateFactory.getTomorrow();
 		Date ds2 = DateFactory.EPOCH;
@@ -341,7 +341,7 @@ public class DateRangeTest {
 	}
 
 	@Test
-	void testEndsAfter2() {
+	public void testEndsAfter2() {
 		Date ds1 = DateFactory.EPOCH;
 		Date de1 = DateFactory.getToday();
 		Date ds2 = DateFactory.EPOCH;
@@ -352,7 +352,7 @@ public class DateRangeTest {
 	}
 
 	@Test
-	void testEndsAfter3() {
+	public void testEndsAfter3() {
 		Date ds1 = DateFactory.EPOCH;
 		Date de1 = DateFactory.getToday();
 		Date ds2 = DateFactory.EPOCH;
@@ -363,7 +363,7 @@ public class DateRangeTest {
 	}
 
 	@Test
-	void testStrictlyIncludes1() {
+	public void testStrictlyIncludes1() {
 		Date ds1 = DateFactory.EPOCH;
 		Date de1 = DateFactory.INFINITY;
 		Date ds2 = DateFactory.getToday();
@@ -374,7 +374,7 @@ public class DateRangeTest {
 	}
 
 	@Test
-	void testStrictlyIncludes2() {
+	public void testStrictlyIncludes2() {
 		Date ds1 = DateFactory.getToday();
 		Date de1 = DateFactory.addDays(DateFactory.getToday(), 3);
 		Date ds2 = DateFactory.getTomorrow();
@@ -385,7 +385,7 @@ public class DateRangeTest {
 	}
 
 	@Test
-	void testStrictlyIncludes3() {
+	public void testStrictlyIncludes3() {
 		Date ds1 = DateFactory.getToday();
 		Date de1 = DateFactory.addDays(DateFactory.getToday(), 3);
 		Date ds2 = DateFactory.getToday();
@@ -396,7 +396,7 @@ public class DateRangeTest {
 	}
 
 	@Test
-	void testStrictlyIncludes4() {
+	public void testStrictlyIncludes4() {
 		Date ds1 = DateFactory.getToday();
 		Date de1 = DateFactory.addDays(DateFactory.getToday(), 3);
 		Date ds2 = DateFactory.getTomorrow();
@@ -407,7 +407,7 @@ public class DateRangeTest {
 	}
 
 	@Test
-	void testExactlyMatches1() {
+	public void testExactlyMatches1() {
 		Date ds1 = DateFactory.EPOCH;
 		Date de1 = DateFactory.INFINITY;
 		Date ds2 = DateFactory.EPOCH;
@@ -418,7 +418,7 @@ public class DateRangeTest {
 	}
 
 	@Test
-	void testExactlyMatches2() {
+	public void testExactlyMatches2() {
 		Date ds1 = DateFactory.getToday();
 		Date de1 = DateFactory.getTomorrow();
 		Date ds2 = DateFactory.getToday();
@@ -429,7 +429,7 @@ public class DateRangeTest {
 	}
 
 	@Test
-	void testExactlyMatches3() {
+	public void testExactlyMatches3() {
 		Date ds1 = DateFactory.getToday();
 		Date de1 = DateFactory.getToday();
 		Date ds2 = DateFactory.getToday();
@@ -440,7 +440,7 @@ public class DateRangeTest {
 	}
 
 	@Test
-	void testExactlyMatches4() {
+	public void testExactlyMatches4() {
 		Date ds1 = DateFactory.EPOCH;
 		Date de1 = DateFactory.INFINITY;
 		Date ds2 = DateFactory.EPOCH;
@@ -451,7 +451,7 @@ public class DateRangeTest {
 	}
 
 	@Test
-	void testExactlyMatches5() {
+	public void testExactlyMatches5() {
 		Date ds1 = DateFactory.getToday();
 		Date de1 = DateFactory.getTomorrow();
 		Date ds2 = DateFactory.getTomorrow();
@@ -462,7 +462,7 @@ public class DateRangeTest {
 	}
 
 	@Test
-	void testExactlyMatches6() {
+	public void testExactlyMatches6() {
 		Date ds1 = DateFactory.getToday();
 		Date de1 = DateFactory.getTomorrow();
 		Date ds2 = DateFactory.getToday();

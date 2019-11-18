@@ -30,7 +30,7 @@ public class DateFactoryTest {
 	 * Tests the correctness of the DateFactory.createDate() factory method.
 	 */
 	@Test
-	void testCreateDate() {
+	public void testCreateDate() {
 		Calendar c = new GregorianCalendar();
 
 		Date d = null;
@@ -145,14 +145,14 @@ public class DateFactoryTest {
 	}
 
 	@Test
-	void testAdd1() {
+	public void testAdd1() {
 		Date d = DateFactory.getToday();
 		assertEquals(DateFactory.getTomorrow(), DateFactory.addDays(d, 1));
 		assertEquals(DateFactory.getYesterday(), DateFactory.addDays(d, -1));
 	}
 
 	@Test
-	void testNow() {
+	public void testNow() {
 		Date before = new Date();
 		Date expected = DateFactory.now();
 		Date after = new Date();
@@ -161,7 +161,7 @@ public class DateFactoryTest {
 	}
 
 	@Test
-	void testToString1() {
+	public void testToString1() {
 		Date now = DateFactory.createDate(2006, 11, 12);
 		Calendar c = new GregorianCalendar();
 		c.setTime(now);
@@ -176,7 +176,7 @@ public class DateFactoryTest {
 	}
 
 	@Test
-	void testToString2() {
+	public void testToString2() {
 		String dateString = DateFactory.toString(null);
 		assertEquals("Null Date", dateString);
 	}
